@@ -4,7 +4,6 @@ import { Link, useLocation } from 'react-router-dom'
 export const SideMenu: React.FC = () => {
   const pathName = useLocation().pathname
 
-  console.log(pathName)
   return (
     <div className="flex  w-16 flex-col justify-between border-e bg-white">
       <div>
