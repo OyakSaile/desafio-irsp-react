@@ -53,7 +53,7 @@ export const CreateUser = () => {
           className=" flex flex-col justify-center h-full  p-12"
           onSubmit={handleCreateUser}
         >
-          <div className=" grid grid-cols-2 gap-6">
+          <div className=" grid grid-cols-1 md:grid-cols-2  gap-6">
             <InputText
               label="Name"
               type="text"
@@ -74,7 +74,7 @@ export const CreateUser = () => {
               onChange={handleInputChange}
             />
           </div>
-          <div className="my-5 grid grid-cols-2">
+          <div className="my-5 grid grid-cols-1 md:grid-cols-2">
             <InputText
               label="Password"
               type="password"
@@ -85,7 +85,7 @@ export const CreateUser = () => {
               onChange={handleInputChange}
             />
           </div>
-          <div className="mx-auto flex gap-3">
+          <div className="mx-auto flex gap-3 flex-col md:flex-row">
             <Button
               onClick={handleGoBack}
               className="border  py-5 w-[250px]  rounded-md text-indigo-500 hover:bg-indigo-50 transition-all"
