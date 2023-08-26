@@ -9,7 +9,7 @@ interface LoadingContext {
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const LoadingContext = createContext({} as LoadingContext)
+export const LoadingContext = createContext({} as LoadingContext)
 
 interface LoadingProviderProps {
   children: React.ReactNode
