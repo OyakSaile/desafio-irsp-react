@@ -1,13 +1,13 @@
 # Como rodar o projeto?
 
-[Embed Lik](https://www.youtube.com/watch?v=I27PWVk950c&ab_channel=KayoSkada "@embed")
+[![Preview do Vídeo](https://i.imgur.com/G93UgVj.png)](https://www.youtube.com/watch?v=I27PWVk950c&ab_channel=KayoSkada)
 
+## Clique na imagem para ver o tutorial, ou se preferir siga o tutorial abaixo.
 
 Qualquer dúvida pode me chamar no Linkedin,
 Bom, esse é normalmente o modo que eu inicio meus projetos, configurando esse boilerplate, claro, que cada caso tem seu uso especifico, mas pra esse daqui quis mostrar como normalmente eu estruturo, nao foi cobrido 100% dos testes, nem 100% das validações, ou nenhuma lib como ZOD, formik e etc. por se tratar de 1 projeto muito simples. Mas dependendo sim do projeto seria bom o uso de algumas dessas lib auxiliares pra manter um bom padrão de código e legibilidade.
 
 Fiz componentes bem simples, o Input normalmente daria para colocar um setValue direto nele, passar props como OnlyLetters, OnlyNumbers e assim vai.
-
 
 https://www.linkedin.com/in/kayoeliasgverdan/
 
