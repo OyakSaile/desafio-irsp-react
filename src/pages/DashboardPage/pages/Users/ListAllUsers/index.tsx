@@ -4,15 +4,27 @@ import { api } from '@/services/api'
 import { DashboardContent } from '@/styles/layout/DashboardContent'
 import { Link } from 'react-router-dom'
 import { UsersList } from './components/UsersList'
+import { Plus } from '@phosphor-icons/react'
+import { useLoading } from '@/hooks/useLoading'
 
 export const ListAllUsers = () => {
   const [users, setUsers] = useState<UsersMapped[]>([])
+  const { Loading } = useLoading()
 
   useEffect(() => {
     const loadUsers = async () => {
-      const { data } = await api.get('/users')
-      const usersMapped = usersFromApi(data)
-      setUsers(usersMapped)
+      try {
+        Loading.turnOn()
+        const { data } = await api.get('/users')
+
+        const usersMapped = usersFromApi(data)
+
+        setUsers(usersMapped)
+      } catch (err) {
+        console.error(err)
+      } finally {
+        Loading.turnOff()
+      }
     }
 
     loadUsers()
@@ -22,12 +34,16 @@ export const ListAllUsers = () => {
     <DashboardContent title="All Users">
       <Link
         to="/users/create"
-        className="bg-indigo-500 my-5 ml-auto flex w-[200px] justify-center items-center text-white py-3"
+        className="bg-indigo-500 rounded-md hover:bg-indigo-600 transition-all font-bold gap-3 my-5 ml-auto flex w-[200px] justify-center items-center text-white py-3"
       >
-        Create User
+        Create new <Plus weight="fill" />
       </Link>
       <div>
-        <UsersList users={users} setUsers={setUsers} />
+        {users.length > 0 ? (
+          <UsersList users={users} setUsers={setUsers} />
+        ) : (
+          <h2>No users found, create one.</h2>
+        )}
       </div>
     </DashboardContent>
   )
