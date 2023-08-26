@@ -1,4 +1,10 @@
+import { LIST_ALL_USERS_ROUTE } from '@/routes/paths'
+import { Link, useLocation } from 'react-router-dom'
+
 export const SideMenu: React.FC = () => {
+  const pathName = useLocation().pathname
+
+  console.log(pathName)
   return (
     <div className="flex  w-16 flex-col justify-between border-e bg-white">
       <div>
@@ -11,9 +17,11 @@ export const SideMenu: React.FC = () => {
         <div className="border-t border-gray-100">
           <div className="px-2">
             <div className="py-4">
-              <a
-                href=""
-                className="t group relative flex justify-center rounded bg-blue-50 px-2 py-1.5 text-blue-700"
+              <Link
+                to={LIST_ALL_USERS_ROUTE}
+                className={`t group relative flex justify-center rounded bg-blue-50 px-2 py-1.5 ${
+                  pathName === LIST_ALL_USERS_ROUTE ? 'text-blue-500' : ''
+                }`}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +41,7 @@ export const SideMenu: React.FC = () => {
                 <span className="absolute start-full top-1/2 ms-4 -translate-y-1/2 rounded bg-gray-900 px-2 py-1.5 text-xs font-medium text-white opacity-0 group-hover:opacity-100">
                   Users
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
