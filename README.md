@@ -1,3 +1,36 @@
+# Como rodar o projeto?
+
+Para rodar o projeto precisamos seguir algumas coisas, pois fiz uma mini API, bem simples apenas para o desafio, sem uso de patterns, sem uso de melhores práticas no back-end foi apenas para usar de auxiliar para desenvolver o app.
+
+Front-END
+
+```jsx
+git clone https://github.com/OyakSaile/desafio-irsp-react
+```
+
+Passos para rodar o front-end
+
+```jsx
+.env adicione
+VITE_API_URL=http://localhost:3333
+npm i
+npm run dev
+```
+
+Back-END
+
+```jsx
+git clone https://github.com/OyakSaile/desafio-irsp-back-
+```
+
+Passos para rodar o back-end
+Não usei variaveis de ambiente nem nada assim no back, para não deixar mais chato a parte de rodar o app, facilitando por enquanto.
+
+```jsx
+npm i
+npm run start:dev
+```
+
 # User Management App
 
 This project is a user management application that allows you to list, create, delete, and view user information. It follows certain functional and non-functional requirements as well as business rules to ensure secure and efficient user management.
