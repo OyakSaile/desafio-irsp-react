@@ -2,10 +2,10 @@ import { useState, useCallback, useEffect } from 'react'
 import { DashboardContent } from '@/styles/layout/DashboardContent'
 import { api } from '@/services/api'
 import { useNavigate, useParams } from 'react-router-dom'
-import { LIST_USERS } from '@/routes/pathts'
 import { useLoading } from '@/hooks/useLoading'
 import { Button } from '@/components/Button'
 import { InputText } from '@/components/Form/InputText'
+import { LIST_ALL_USERS_ROUTE } from '@/routes/paths'
 
 export const EditUser = () => {
   const navigate = useNavigate()
@@ -26,7 +26,7 @@ export const EditUser = () => {
         setFormData(data)
       } catch (err) {
         console.error(err)
-        navigate(LIST_USERS)
+        navigate(LIST_ALL_USERS_ROUTE)
       } finally {
         Loading.turnOff()
       }
@@ -52,7 +52,7 @@ export const EditUser = () => {
       try {
         await api.put(`/users/${id}`, formData)
 
-        navigate('/users/list')
+        navigate(LIST_ALL_USERS_ROUTE)
       } catch (error) {}
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -60,7 +60,7 @@ export const EditUser = () => {
   )
 
   const handleGoBack = useCallback(() => {
-    navigate(LIST_USERS)
+    navigate(LIST_ALL_USERS_ROUTE)
   }, [navigate])
 
   return (

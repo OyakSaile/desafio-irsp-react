@@ -4,7 +4,7 @@ import { api } from '@/services/api'
 import { useNavigate } from 'react-router-dom'
 import { usersToApi } from './adapters/usersToApi'
 import { InputText } from '@/components/Form/InputText'
-import { LIST_USERS } from '@/routes/pathts'
+import { LIST_ALL_USERS_ROUTE } from '@/routes/paths'
 import { Button } from '@/components/Button'
 
 export const CreateUser = () => {
@@ -35,7 +35,7 @@ export const CreateUser = () => {
 
         await api.post(`/users/`, userMapped)
 
-        navigate(LIST_USERS)
+        navigate(LIST_ALL_USERS_ROUTE)
       } catch (error) {}
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -43,7 +43,7 @@ export const CreateUser = () => {
   )
 
   const handleGoBack = useCallback(() => {
-    navigate(LIST_USERS)
+    navigate(LIST_ALL_USERS_ROUTE)
   }, [navigate])
 
   return (

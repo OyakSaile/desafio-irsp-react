@@ -38,7 +38,6 @@ export const UsersList: React.FC<UsersListProps> = ({ users, setUsers }) => {
         <th className="py-3 px-6"></th>
         <th className="py-3 px-6">Name</th>
         <th className="py-3 px-6">E-mail</th>
-        <th className="py-3 px-6">UserName</th>
         <th className="py-3 px-6">Actions</th>
       </thead>
 
@@ -57,7 +56,6 @@ export const UsersList: React.FC<UsersListProps> = ({ users, setUsers }) => {
               {user.name}
             </td>
             <td className="py-3 px-6">{user.email}</td>
-            <td className="py-3 px-6">@{user.username}</td>
             <td className="py-3 px-6 flex gap-3">
               <button onClick={() => handleEditUser(user.id)} type="button">
                 <Pencil

@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import { UsersList } from './components/UsersList'
 import { Plus } from '@phosphor-icons/react'
 import { useLoading } from '@/hooks/useLoading'
+import { CREATE_USER_ROUTER } from '@/routes/paths'
 
 export const ListAllUsers = () => {
   const [users, setUsers] = useState<UsersMapped[]>([])
@@ -33,7 +34,7 @@ export const ListAllUsers = () => {
   return (
     <DashboardContent title="All Users">
       <Link
-        to="/users/create"
+        to={CREATE_USER_ROUTER}
         className="bg-indigo-500 rounded-md hover:bg-indigo-600 transition-all font-bold gap-3 my-5 ml-auto flex w-[200px] justify-center items-center text-white py-3"
       >
         Create new <Plus weight="fill" />
