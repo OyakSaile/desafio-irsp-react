@@ -1,15 +1,14 @@
 import React, { ButtonHTMLAttributes } from 'react'
 import { twMerge } from 'tailwind-merge'
 
-export interface InputTextProps
-  extends ButtonHTMLAttributes<HTMLButtonElement> {}
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
 
-export const Button: React.FC<InputTextProps> = ({ ...rest }) => {
+export const Button: React.FC<ButtonProps> = ({ className, ...rest }) => {
   return (
     <button
       className={twMerge(
-        'border rounded-md py-2 px-3 disabled:bg-black',
-        rest.className,
+        'border rounded-md py-2 px-3 disabled:[rgba(216, 216, 216, 0.329)]',
+        className,
       )}
       {...rest}
     />
