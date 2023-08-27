@@ -3,49 +3,69 @@ import { render, screen } from '@testing-library/react'
 
 import { expect, it, vi } from 'vitest'
 import { InputText } from '.'
+import { Formik } from 'formik'
 
-it('should to render input element with correct props', () => {
-  const label = 'Username'
-  const id = 'username'
-  const className = 'input-field'
-  const hasError = false
-  const onChange = vi.fn()
+describe('InputText', () => {
+  it('should to render without error', () => {
+    render(
+      <Formik onSubmit={vi.fn()} initialValues={{}}>
+        <InputText
+          label="Name"
+          data-testid="custom-id"
+          hasError
+          errorMessage="Invalid input"
+        />
+      </Formik>,
+    )
+    expect(screen.getByRole('textbox')).toBeInTheDocument()
+  })
 
-  render(
-    <InputText
-      label={label}
-      id={id}
-      className={className}
-      hasError={hasError}
-      onChange={onChange}
-    />,
-  )
+  it('should to render label when provided', () => {
+    render(
+      <Formik onSubmit={vi.fn()} initialValues={{}}>
+        <InputText
+          label="Name"
+          data-testid="custom-id"
+          hasError
+          errorMessage="Invalid input"
+        />
+      </Formik>,
+    )
+    expect(screen.getByText('Name')).toBeInTheDocument()
+  })
 
-  const inputElement = screen.getByLabelText(label)
-  expect(inputElement).toBeInTheDocument()
-  expect(inputElement).toHaveAttribute('id', id)
-  expect(inputElement).toHaveClass(className)
-  expect(inputElement).not.toHaveClass('border-red-500')
-  expect(inputElement).toHaveValue('')
-})
+  it('should to render error message when hasError is true', () => {
+    render(
+      <Formik onSubmit={vi.fn()} initialValues={{}}>
+        <InputText
+          data-testid="custom-id"
+          hasError
+          errorMessage="Invalid input"
+        />
+      </Formik>,
+    )
+    expect(screen.getByText('Invalid input')).toBeInTheDocument()
+  })
 
-it('should to render input element with error class when hasError prop is true', () => {
-  const label = 'Username'
-  const id = 'username'
-  const className = 'input-field'
-  const hasError = true
-  const onChange = vi.fn()
+  it('shoud to applies custom className', () => {
+    render(
+      <Formik onSubmit={vi.fn()} initialValues={{}}>
+        <InputText data-testid="custom-id" className="custom-class" />
+      </Formik>,
+    )
 
-  render(
-    <InputText
-      label={label}
-      id={id}
-      className={className}
-      hasError={hasError}
-      onChange={onChange}
-    />,
-  )
+    expect(screen.getByTestId('custom-id')).toHaveClass('custom-class')
+  })
 
-  const inputElement = screen.getByLabelText(label)
-  expect(inputElement).toHaveClass('border-red-500')
+  it('shoud to applies custom id', () => {
+    render(
+      <Formik onSubmit={vi.fn()} initialValues={{}}>
+        <InputText data-testid="custom-id" id="custom-id" />
+      </Formik>,
+    )
+
+    expect(screen.getByTestId('custom-id')).toHaveAttribute('id', 'custom-id')
+  })
+
+  // Adicione mais casos de teste para diferentes props e cenários
 })
