@@ -29,6 +29,7 @@ export const ListAllUsers = () => {
     }
 
     loadUsers()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

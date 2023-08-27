@@ -42,6 +42,7 @@ export const EditUser = () => {
     }
 
     loadInitialUserInformation()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id])
 
   const handleGoBack = useCallback(() => {
