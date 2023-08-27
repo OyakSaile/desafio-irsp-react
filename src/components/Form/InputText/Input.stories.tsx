@@ -3,6 +3,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { InputText } from './'
+import { Formik } from 'formik'
 
 const meta: Meta<typeof InputText> = {
   component: InputText,
@@ -11,6 +12,13 @@ const meta: Meta<typeof InputText> = {
     placeholder: 'Placeholder',
     hasError: false,
   },
+  decorators: [
+    (Story) => (
+      <Formik initialValues={{}} onSubmit={() => {}}>
+        <Story />
+      </Formik>
+    ),
+  ],
 }
 
 export default meta
@@ -22,5 +30,5 @@ type Story = StoryObj<typeof InputText>
  * to learn how to use render functions.
  */
 export const Primary: Story = {
-  render: (args) => <InputText {...args} />,
+  render: (args) => <InputText name="name" {...args} />,
 }
