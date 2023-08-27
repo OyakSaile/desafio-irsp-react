@@ -18,7 +18,8 @@
     "types": ["vitest/globals"],
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "allowImportingTsExtensions": true
   },
   "include": ["./src"]
 }
