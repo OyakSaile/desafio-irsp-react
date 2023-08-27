@@ -39,7 +39,7 @@ export const ListAllUsers = () => {
       >
         Create new <Plus weight="fill" />
       </Link>
-      <div>
+      <div className="w-[320px] md:w-full overflow-auto">
         {users.length > 0 ? (
           <UsersList users={users} setUsers={setUsers} />
         ) : (

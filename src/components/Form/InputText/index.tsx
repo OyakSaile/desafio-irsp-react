@@ -1,13 +1,18 @@
+import { Field } from 'formik'
 import { InputHTMLAttributes } from 'react'
 import { twMerge } from 'tailwind-merge'
 export interface InputTextProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string
   hasError?: boolean
+  errorMessage?: string
+  type?: string
 }
 export const InputText: React.FC<InputTextProps> = ({
   label,
+  errorMessage,
   className,
   id,
+  type = 'text',
   hasError = false,
   ...rest
 }) => {
@@ -20,7 +25,8 @@ export const InputText: React.FC<InputTextProps> = ({
   return (
     <div className="flex flex-col">
       {label && <label htmlFor={id}>{label}</label>}
-      <input id={id} className={inputClassName} {...rest} type="text" />
+      <Field id={id} className={inputClassName} {...rest} type={type} />
+      {hasError && <p className="text-red-500">{errorMessage}</p>}
     </div>
   )
 }

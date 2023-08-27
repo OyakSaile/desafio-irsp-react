@@ -1,20 +1,18 @@
 export interface UsersFromApi {
-  id: number
+  id: string
   name: string
   email: string
 }
 
 export interface UsersMapped {
-  id: number
+  id: string
   name: string
   email: string
 }
-export const usersFromApi = (data: UsersFromApi[]): UsersMapped[] => {
-  return data.map((item) => {
-    return {
-      id: item.id,
-      name: item.name,
-      email: item.email,
-    }
-  })
+export const usersFromApi = (data: UsersFromApi): UsersMapped => {
+  return {
+    id: data.id,
+    name: data.name,
+    email: data.email,
+  }
 }
