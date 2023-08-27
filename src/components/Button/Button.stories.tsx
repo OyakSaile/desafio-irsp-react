@@ -6,6 +6,10 @@ import { Button } from './'
 
 const meta: Meta<typeof Button> = {
   component: Button,
+  args: {
+    disabled: false,
+    children: 'Example Button',
+  },
 }
 
 export default meta
@@ -17,17 +21,23 @@ type Story = StoryObj<typeof Button>
  * to learn how to use render functions.
  */
 export const Primary: Story = {
-  render: () => (
-    <Button className="border rounded-md py-2 px-3 hover:brightness-90 bg-indigo-500 text-white disabled:bg-black">
-      Example Button
+  render: (args) => (
+    <Button
+      {...args}
+      className="border rounded-md py-2 px-3  bg-indigo-500 text-white"
+    >
+      {args.children}
     </Button>
   ),
 }
 
 export const Secondary: Story = {
-  render: () => (
-    <Button className="border rounded-md py-2 px-3  text-indigo-500  hover:brightness-90">
-      Example Button
+  render: (args) => (
+    <Button
+      {...args}
+      className="border rounded-md py-2 px-3  text-indigo-500  hover:brightness-90"
+    >
+      {args.children}
     </Button>
   ),
 }

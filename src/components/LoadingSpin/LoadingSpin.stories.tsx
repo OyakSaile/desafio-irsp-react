@@ -7,7 +7,6 @@ import { LoadingSpin } from './'
 
 const meta: Meta<typeof LoadingSpin> = {
   component: LoadingSpin,
-  tags: ['autodocs'],
 }
 
 export default meta
