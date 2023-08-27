@@ -7,14 +7,10 @@
 Qualquer dúvida pode me chamar no Linkedin,
 Bom, esse é normalmente o modo que eu inicio meus projetos, configurando esse boilerplate, claro, que cada caso tem seu uso especifico, mas pra esse daqui quis mostrar como normalmente eu estruturo, nao foi cobrido 100% dos testes, nem 100% das validações, ou nenhuma lib como ZOD, formik e etc. por se tratar de 1 projeto muito simples. Mas dependendo sim do projeto seria bom o uso de algumas dessas lib auxiliares pra manter um bom padrão de código e legibilidade.
 
-Fiz componentes bem simples, o Input normalmente daria para colocar um setValue direto nele, passar props como OnlyLetters, OnlyNumbers e assim vai.
-
 https://www.linkedin.com/in/kayoeliasgverdan/
 
 Para rodar o projeto precisamos seguir algumas coisas, pois fiz uma mini API, bem simples apenas para o desafio, sem uso de patterns, sem uso de melhores práticas no back-end foi apenas para usar de auxiliar para desenvolver o app.
 
-Como o projeto é simples, eu não quis aumentar bastante a complexidade, usando libs de validação, como ZOD, ou Zustand para estado.
-Foi um projeto bem divertido de fazer.
 
 Front-END
 
